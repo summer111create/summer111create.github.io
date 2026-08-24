@@ -1,0 +1,47 @@
+{
+  "host": "127.0.0.1",
+  "port": 3010,
+  "authToken": "change-me",
+  "browser": {
+    "cdpUrl": "http://127.0.0.1:9222",
+    "navigationTimeoutMs": 30000,
+    "autoLaunch": true,
+    "executablePath": "",
+    "userDataDir": "C:\\Users\\x'c'y\\PycharmProjects\\PythonProject\\openclaw-web-bridge\\.chrome-profile",
+    "launchTimeoutMs": 15000,
+    "launchCooldownMs": 60000,
+    "extraArgs": []
+  },
+  "agent": {
+    "workspaceRoot": ".",
+    "allowRequestWorkspaceRoot": false,
+    "allowAnyPath": true
+  },
+  "providers": [
+    {
+      "id": "kimi",
+      "type": "kimi",
+      "baseUrl": "https://www.kimi.com"
+    },
+    {
+      "id": "qwen",
+      "type": "qwen",
+      "baseUrl": "https://chat.qwen.ai"
+    },
+    {
+      "id": "deepseek",
+      "type": "deepseek",
+      "baseUrl": "https://chat.deepseek.com"
+    },
+    {
+      "id": "doubao",
+      "type": "doubao",
+      "baseUrl": "https://www.doubao.com"
+    },
+    {
+      "id": "glm",
+      "type": "glm",
+      "baseUrl": "https://chatglm.cn"
+    }
+  ]
+}
