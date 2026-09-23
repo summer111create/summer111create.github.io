@@ -1,143 +1,91 @@
 # 夏才艺 · Portfolio
 
-> **Cross-border trade × Data × Web**
+> **跨境贸易 × 数据分析**
 > 用数据选品，用代码提效。
 
-工业互联网应用专业在读（2026–2029）。
-方向：**外贸 / 跨境电商 × 数据分析**。
+工业互联网应用专业在读（2026–2029，山东济宁）。
+方向：**外贸 B2B × 跨境成本核算 × 数据分析**。
 
 会一点 Python，会一点前端，喜欢把重复的事自动化。
 
-- 📫 邮箱：`[待填：你的邮箱]`
-- 💼 求职方向：外贸运营 / 跨境选品 / 数据分析
-- 🌱 正在学：Python 爬虫、商务英语
+- 📫 邮箱：170553913@qq.com
+- 💼 求职方向：外贸业务员 / 跨境运营 / 数据分析
+- 🌱 正在学：Python 爬虫、商务英语、外贸函电
 - 🔗 GitHub：[github.com/summer111create](https://github.com/summer111create)
+- 📝 CSDN：[blog.csdn.net/2601_96425433](https://blog.csdn.net/2601_96425433)
+
+在线访问：[https://summer111create.github.io](https://summer111create.github.io)
 
 ---
 
-## ⭐ 主打项目
+## ⭐ 项目
 
-### 1. 跨境选品数据分析工具（Python）
+### 1. 跨境选品与成本核算工具（Python）
 
+把「这个品能不能做」从拍脑袋变成算数字。
 
+**它解决什么问题**：外贸业务员报价时最容易犯的错，是把 EXW / FOB / CIF 当成并列项去相减——同一笔钱被扣三遍。这个工具把它们还原成**单向累加**的关系，并把「出口退税」作为收入项计回（这一项常被整个漏掉，而它往往占采购价的 13%）。
 
-把"这个品能不能做"从拍脑袋变成算数字。
+```
+FOB 净利 = FOB 收入 + 出口退税 − 采购含税价 − 内陆拖车 − 报关港杂 − 银行手续费
+出口退税 = 采购含税价 ÷ 1.13 × 退税率
+报 CIF 时再计入：国际运费（按 CBM 分摊）+ 保险费
+```
 
-- 自建评分模型：`净利 = 售价 − 采购 − 物流 − 平台佣金 − 关税 − 认证摊分`，叠加竞品密度评估（基准 50 家）
-- Python 算法 + Excel 模板双版本，两套结果一致
-- 实测：蓝牙耳机 63.0 / 工业 LED 灯 59.8 / 定制毛绒书包 42.5
-- 识别出「低 MOQ 与外观迷惑性」「儿童用品认证成本压制利润」等选品陷阱
+**已实现**：
+- `rebate()` 出口退税计算（含 `(1 + VAT_IN)` 参数化写法与浮点误差处理）
+- `clean.py` 数据清洗模块：`prece()` / `orders()` / `moq()`，把阿里国际站的商品页文本（`$10.00 + $11.50 / piece`、`500+ orders`、`MOQ: 100 Pieces`）转成可计算的数字
 
-<img width="2083" height="799" alt="屏幕截图 2026-09-10 222507" src="https://github.com/user-attachments/assets/1560f857-57b8-446a-b7f0-4b85cbeabce0" />
+**进行中**：`fob_profit()` 净利与利润率测算（含规模效应分析）
 
+**参数口径**：FOB 主口径 / CIF 辅口径 · 中东市场（阿联酋，关税 5% + VAT 5%）· 品类聚焦工程机械易损件
 
-**技术栈**：Python、Excel 函数与自动化
+🔗 `[待补：仓库地址 + 运行截图]`
 
----
-
-### 2. CSV 自动化数据大屏
-
-读取 CSV 数据自动生成可视化大屏，无需手工做图。
-
-`[待填：补一段说明——数据来源是什么？自动更新吗？用了什么图表库（ECharts/Chart.js）？]`
-
-**技术栈**：HTML / CSS / JavaScript、`[待填：图表库]`
+**技术栈**：Python
 
 ---
 
-### 3. 价格趋势可视化
+### 2. 生活管理 Web 应用
 
-`[待填：这个页面展示什么价格？数据哪来的？能自动抓取吗？]`
+独立开发的个人管理工具，集成任务记录、提醒、预算管理与精力分配，含圆饼图可视化（16 色板、分段着色），并同步搭建了微信小程序版。
 
-**技术栈**：HTML / CSS / JavaScript
+🔗 `[待补：部署上线链接]`
 
----
-
-## 🗂 其他作品
-
-| 作品 | 说明 |
-|---|---|
-| 照片回忆墙 | 前端动效展示 |
-| 炫酷项目展示 | 前端动效与布局 |
-| 开阳云音乐网站 | 音乐站 UI 仿写练习 |
-| 模拟小红书笔记 | 社交平台 UI 仿写练习 |
-| 我的网页 | 个人主页练习 |
-| 个人文章搭建模板 | 可复用文章页模板 |
-| 今日星座运势罗盘 | 趣味小工具 |
-| 生活管理 Web 应用 | 任务 / 提醒 / 预算 / 精力管理，含圆饼图可视化（`[待填：如果你开源了，填地址]`） |
+**技术栈**：HTML / CSS / JavaScript · 微信小程序
 
 ---
 
 ## 🛠 技术栈
 
 **语言与工具**：Python · HTML/CSS/JavaScript · Excel · Git
-**方向相关**：跨境选品分析 · 阿里国际站 · 净利与成本核算
+**方向相关**：跨境成本核算 · 出口退税 · 阿里国际站 · FOB/CIF 报价
 **在学**：Python 爬虫 · SQL · 商务英语
 
 ---
 
 ## 📌 关于这个仓库
 
-这是我的个人作品集，会持续更新。
-大部分是跟着教程做的小练习，但从 2026 年起开始做**真正能用的工具**——尤其是外贸和数据分析方向的。
+这是我的个人作品集。里面的每一个项目都是我自己写、并且能讲清实现细节的。
 
-📅 最后更新：`[待填日期]`
+> 原则：**1 个能用的工具 > 20 个教程 demo**。宁可少，不挂自己做不出来的东西。
+
+📅 最后更新：2026-09-21
 
 ---
 
-<!--
-========== 使用说明（贴到 GitHub 前请删掉这一段）==========
+## 维护说明
 
-1. 所有 `[待填：xxx]` 都要替换掉，尤其是「运行截图」——没有截图的项目，点击率掉一半
-2. 「主打项目」只留 3 个，宁缺毋滥。1 个能用的工具 > 20 个教程 demo
-3. 截图怎么放：把图片上传到仓库（比如建个 assets/ 文件夹），
-   然后写 ![](assets/截图.png)
-4. 建议加 topics 标签（仓库页面右侧齿轮图标）：
-   portfolio · cross-border-ecommerce · python · data-analysis · frontend
-5. License 建议选 MIT（仓库根目录加 LICENSE 文件），不填别人不敢用你的代码
--->
-[README-作品集仓库-草稿.md](https://github.com/user-attachments/files/32062665/README-.-.md)
-# OpenClaw Web Bridge
+网站内容由 `content.js` 驱动：修改其中的 `portfolio` 对象（姓名、简介、技能、`projects` 数组），保存后刷新网页即可生效，无需改动 HTML。
 
-本地 Web 模型桥接服务：复用已经登录的调试 Chrome，通过 CDP 调用 Web 模型站点，并对 OpenClaw 暴露 OpenAI-compatible API 和服务端 agent 接口。
+`projects` 各项字段说明：
 
-当前已落地核心骨架和三个浏览器站点适配器：
-
-- `kimi`
-- `qwen`
-- `deepseek`
-- `deepseek-r1`
-- `doubao`
-- `glm`
-- `glm-think`
-
-
-
-
-
-## 启动
-
-```bash
-cd openclaw-web-bridge
-
-npm install
-npm start
-```
-
-服务会按 `config.json` 里的 `browser` 配置自动启动调试 Chrome 
-
-```json
-{
-  "browser": {
-    "cdpUrl": "http://127.0.0.1:9222",
-    "autoLaunch": true,
-    "executablePath": "",
-    "userDataDir": ".chrome-profile",
-    "launchTimeoutMs": 15000,
-    "extraArgs": []
-  }
-}
-```
-
-`userDataDir` 就是 Chrome 登录态保存目录；需要设置
-
+| 字段 | 说明 |
+|---|---|
+| `category` | 分类筛选：`analysis` / `crawler` / `creative` / `automation` |
+| `number` | 卡片序号 |
+| `title` / `description` | 标题与描述 |
+| `tags` | 技术标签数组 |
+| `link` | 点击后跳转的地址 |
+| `accent` | 卡片配色：`blue` / `cyan` / `coral` / `yellow` / `pink` / `mint` |
+| `bgImage` | 卡片背景图路径；**留空则自动使用 `accent` 纯色背景**，不会破图 |

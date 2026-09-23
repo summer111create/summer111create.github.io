@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# 虚拟环境（切勿上传）
+.venv/
+venv/
+env/
+ENV/
+
+# 环境变量与密钥
+.env
+*.key
+*.pem
+config.json
+
+# IDE / 编辑器
+.idea/
+.vscode/
+*.iml
+*.swp
+
+# 前端依赖
+node_modules/
+
+# 系统与日志
+.DS_Store
+Thumbs.db
+*.log
