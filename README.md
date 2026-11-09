@@ -8,7 +8,7 @@
 
 会一点 Python，会一点前端，喜欢把重复的事自动化。
 
-- 📫 邮箱：170553913@qq.com
+- 📫 邮箱：1705539133@qq.com
 - 💼 求职方向：外贸业务员 / 跨境运营 / 数据分析
 - 🌱 正在学：Python 爬虫、商务英语、外贸函电
 - 🔗 GitHub：[github.com/summer111create](https://github.com/summer111create)
