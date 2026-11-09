@@ -143,14 +143,29 @@ function prepareAnimations() {
 
 const labels = { crawler: "爬虫采集", automation: "自动化", analysis: "数据分析", creative: "创意作品" };
 const grid = document.getElementById("project-grid");
+
+/** 缩略图：有 thumb 就用生成的 SVG（真实数据图），否则退回渐变色块 */
+const thumbMarkup = (project) => {
+  if (project.thumb) {
+    return `<div class="card-thumb has-img"><img src="${project.thumb}" alt="${project.title} 数据图" loading="lazy" /></div>`;
+  }
+  return `<div class="card-thumb thumb-${project.accent}"${project.bgImage ? ` style="background-image:url('${project.bgImage}')"` : ""}></div>`;
+};
+
+/** 右下角动作：有链接才算「查看项目」，无链接的标「内部工具」并且不可点 */
+const actionMarkup = (project) => {
+  if (!project.link) return `<span class="project-nolink">内部工具</span>`;
+  return `<a href="${project.link}" target="_blank" rel="noreferrer">查看项目 ↗</a>`;
+};
+
 const renderProjects = (category = "all") => {
   const projects = category === "all" ? portfolio.projects : portfolio.projects.filter((project) => project.category === category);
   grid.innerHTML = projects.map((project) => `
     <article class="project-card accent-${project.accent}">
-      <div class="card-thumb thumb-${project.accent}"${project.bgImage ? ` style="background-image:url('${project.bgImage}')"` : ""}></div>
+      ${thumbMarkup(project)}
       <div class="project-top"><span class="project-number">${project.number}</span><span class="project-category">${labels[project.category]}</span></div>
       <div class="project-body"><h3>${project.title}</h3><p>${project.description}</p></div>
-      <div class="project-bottom"><div class="tags">${project.tags.map((tag) => `<span>${tag}</span>`).join("")}</div><a href="${project.link}" target="_blank" rel="noreferrer">查看项目</a></div>
+      <div class="project-bottom"><div class="tags">${project.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>${actionMarkup(project)}</div>
     </article>`).join("");
 
   // 新卡片挂载入场动画
