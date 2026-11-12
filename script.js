@@ -115,7 +115,7 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && menuOpen) closeMenu();
 });
 
-document.title = `${portfolio.name} | Python 作品集`;
+document.title = `${portfolio.name} | 跨境贸易 × 数据分析`;
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.getElementById("project-count").textContent = String(portfolio.projects.length).padStart(2, "0");
